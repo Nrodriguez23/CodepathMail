@@ -1,5 +1,9 @@
 package com.example.codepathmail
 
+import android.graphics.Color
+import android.graphics.Typeface
+import android.graphics.fonts.FontFamily
+import android.graphics.fonts.FontStyle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +39,12 @@ class EmailAdapter(private val emails: List<Email>) : RecyclerView.Adapter<Email
          holder.senderTv.text = email.sender
          holder.titleTv.text = email.title
          holder.summaryTv.text = email.summary
+
+         holder.itemView.setOnClickListener{
+             holder.titleTv.setTextColor(Color.parseColor("#1B91E0"))
+             holder.titleTv.setTypeface(null, Typeface.BOLD)
+
+         }
      }
 
      override fun getItemCount(): Int {
